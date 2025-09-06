@@ -20,6 +20,13 @@ const Modal = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+
+  @media (max-width: 600px) {
+    padding: 1rem 0.5rem;
+    max-width: 98vw;
+    max-height: 98vh;
+  }
 `;
 
 const CloseBtn = styled.button`
@@ -32,6 +39,12 @@ const CloseBtn = styled.button`
   font-size: 2rem;
   cursor: pointer;
   z-index: 10001;
+
+  @media (max-width: 600px) {
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+  }
 `;
 
 const PdfFrame = styled.iframe`
@@ -40,6 +53,15 @@ const PdfFrame = styled.iframe`
   border: none;
   background: #111;
   border-radius: 10px;
+
+  @media (max-width: 900px) {
+    width: 85vw;
+    height: 50vh;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    height: 40vh;
+  }
 `;
 
 export default function PdfSlider({ open, onClose, pdfUrl }) {

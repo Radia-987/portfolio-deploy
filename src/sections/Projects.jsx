@@ -16,7 +16,7 @@ const DateLabel = styled.div`
   margin-bottom: 0.7rem;
   align-self: flex-end;
 `;
-
+// ...existing code...
 const ProjectsSection = styled.section`
   background: #181a1b;
   min-height: 60vh;
@@ -24,6 +24,10 @@ const ProjectsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 700px) {
+    padding: 2rem 0 2.5rem 0;
+  }
 `;
 
 const SectionTitle = styled.h2`
@@ -32,6 +36,11 @@ const SectionTitle = styled.h2`
   font-weight: 600;
   font-size: 2rem;
   margin-bottom: 2.5rem;
+
+  @media (max-width: 600px) {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
 `;
 
 const CardsGrid = styled.div`
@@ -40,6 +49,12 @@ const CardsGrid = styled.div`
   gap: 2.2rem;
   width: 100%;
   max-width: 1100px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+    max-width: 98vw;
+  }
 `;
 
 const Card = styled.div`
@@ -58,6 +73,15 @@ const Card = styled.div`
     transform: scale(1.045);
     box-shadow: 0 4px 32px #14ffe944;
   }
+
+  @media (max-width: 900px) {
+    padding: 1.2rem 0.7rem 1rem 0.7rem;
+    border-radius: 14px;
+  }
+  @media (max-width: 600px) {
+    padding: 1rem 0.3rem 0.7rem 0.3rem;
+    border-radius: 10px;
+  }
 `;
 
 const CardTitle = styled.h3`
@@ -65,18 +89,32 @@ const CardTitle = styled.h3`
   font-size: 1.25rem;
   color: #14ffe9;
   margin-bottom: 0.7rem;
+
+  @media (max-width: 600px) {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const CardStack = styled.div`
   font-size: 0.98rem;
   color: #7f5fff;
   margin-bottom: 0.7rem;
+
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const CardShort = styled.p`
   color: #bdbdbd;
   font-size: 1.01rem;
   margin-bottom: 1.1rem;
+
+  @media (max-width: 600px) {
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+  }
 `;
 
 const SeeMoreBtn = styled.button`
@@ -93,6 +131,11 @@ const SeeMoreBtn = styled.button`
     color: #7f5fff;
     text-decoration: underline;
   }
+
+  @media (max-width: 600px) {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const CardDetails = styled.div`
@@ -103,12 +146,24 @@ const CardDetails = styled.div`
   color: #e0e0e0;
   font-size: 0.98rem;
   box-shadow: 0 2px 8px #14ffe922;
+
+  @media (max-width: 600px) {
+    font-size: 0.93rem;
+    padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+  }
 `;
 
 const CardLinks = styled.div`
   display: flex;
   gap: 1.1rem;
   margin-top: 1.1rem;
+
+  @media (max-width: 600px) {
+    gap: 0.7rem;
+    margin-top: 0.7rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
 `;
 
 const CardLink = styled.a`
@@ -122,6 +177,12 @@ const CardLink = styled.a`
   &:hover {
     color: #7f5fff;
   }
+
+  @media (max-width: 600px) {
+    font-size: 0.98rem;
+    justify-content: center;
+    width: 100%;
+  }
 `;
 
 const CardImage = styled.img`
@@ -132,6 +193,11 @@ const CardImage = styled.img`
   margin-bottom: 1rem;
   background: linear-gradient(90deg, #232526 60%, #14ffe9 100%);
   display: block;
+
+  @media (max-width: 600px) {
+    max-height: 120px;
+    margin-bottom: 0.7rem;
+  }
 `;
 
 
@@ -290,3 +356,4 @@ export default function Projects() {
     </ProjectsSection>
   );
 }
+

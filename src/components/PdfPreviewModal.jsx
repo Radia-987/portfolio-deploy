@@ -23,6 +23,12 @@ const Modal = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+
+  @media (max-width: 600px) {
+    padding: 1rem 0.5rem;
+    max-width: 98vw;
+    max-height: 98vh;
+  }
 `;
 
 const CloseBtn = styled.button`
@@ -36,7 +42,6 @@ const CloseBtn = styled.button`
   cursor: pointer;
   z-index: 10001;
 `;
-
 const PdfFrame = styled.iframe`
   width: 60vw;
   height: 70vh;
@@ -44,8 +49,16 @@ const PdfFrame = styled.iframe`
   background: #111;
   border-radius: 10px;
   overflow-y: scroll;
-`;
 
+  @media (max-width: 900px) {
+    width: 85vw;
+    height: 50vh;
+  }
+  @media (max-width: 600px) {
+    width: 98vw;
+    height: 40vh;
+  }
+`;
 export default function PdfPreviewModal({ open, onClose, pdfUrl }) {
   if (!open) return null;
   return (
