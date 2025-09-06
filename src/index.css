@@ -8,17 +8,7 @@ a:hover {
   color: #7f5fff;
 }
 
-/* 
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #181a1b 70%, #232526 100%);
-  color: #e6e6f0;
-  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  transition: background 0.3s, color 0.3s;
-  overflow-x: hidden;
-} */
+
 body {
   margin: 0;
   min-width: 320px;
@@ -114,12 +104,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-/* ...existing code... */
 
-/* Add vertical spacing between cards */
-/* ...existing code... */
-
-/* Add vertical spacing between cards for all card types */
 .card:not(:last-child),
 .research-card:not(:last-child),
 .certification-card:not(:last-child),
@@ -127,10 +112,7 @@ button:focus-visible {
   margin-bottom: 2rem;
 }
 
-/* If you use a grid for cards, add row gap */
+
 .responsive-grid {
   row-gap: 2rem;
 }
-
-/* ...existing
-/* ...existing code...
