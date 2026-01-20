@@ -45,7 +45,10 @@ const ProjectsSection = styled.section`
   align-items: center;
 
   @media (max-width: 700px) {
-    padding: 2rem 0 2.5rem 0;
+    padding: 2.5rem 1rem 2.5rem 1rem;
+  }
+  @media (max-width: 500px) {
+    padding: 2rem 0.8rem 2rem 0.8rem;
   }
 `;
 
@@ -72,7 +75,11 @@ const CardsGrid = styled.div`
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
     gap: 5rem;
-    max-width: 98vw;
+    max-width: 95vw;
+  }
+  @media (max-width: 500px) {
+    max-width: 92vw;
+    gap: 4rem;
   }
 `;
 
@@ -94,11 +101,11 @@ const Card = styled.div`
   }
 
   @media (max-width: 900px) {
-    padding: 1.2rem 0.7rem 1rem 0.7rem;
+    padding: 1.5rem 1rem 1.2rem 1rem;
     border-radius: 14px;
   }
   @media (max-width: 600px) {
-    padding: 1rem 0.3rem 0.7rem 0.3rem;
+    padding: 1.2rem 0.8rem 1rem 0.8rem;
     border-radius: 10px;
   }
 `;

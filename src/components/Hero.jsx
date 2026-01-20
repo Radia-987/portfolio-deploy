@@ -17,10 +17,15 @@ const HeroSection = styled.section`
   text-align: center;
   position: relative;
   animation: ${fadeIn} 1.2s ease;
+  padding: 2rem 1.5rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
+    min-height: 75vh;
+    padding: 2rem 1rem;
+  }
+  @media (max-width: 500px) {
     min-height: 70vh;
-    padding: 1.2rem 0.5rem;
+    padding: 1.5rem 0.8rem;
   }
 `;
 

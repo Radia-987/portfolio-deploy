@@ -131,12 +131,13 @@ const Card = styled.div`
   align-items: center;
 
   @media (max-width: 700px) {
-    max-width: 98vw;
-    padding: 1.2rem 0.7rem 1rem 0.7rem;
+    max-width: 95vw;
+    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
     border-radius: 14px;
   }
   @media (max-width: 500px) {
-    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    max-width: 92vw;
+    padding: 1.2rem 1rem 1rem 1rem;
     border-radius: 10px;
   }
 `;

@@ -61,8 +61,11 @@ const AboutSection = styled.section`
   padding: 4rem 1.5rem 3rem 1.5rem;
 
   @media (max-width: 700px) {
-    padding: 2.2rem 0.5rem 1.5rem 0.5rem;
+    padding: 2.5rem 1rem 2rem 1rem;
     min-height: 50vh;
+  }
+  @media (max-width: 500px) {
+    padding: 2rem 0.8rem 1.5rem 0.8rem;
   }
 `;
 
@@ -91,13 +94,15 @@ const AboutContent = styled.div`
   line-height: 1.7;
 
   @media (max-width: 700px) {
-    max-width: 98vw;
-    padding: 1.2rem 0.7rem;
+    max-width: 95vw;
+    padding: 1.5rem 1.2rem;
     font-size: 1rem;
+    border-radius: 14px;
   }
   @media (max-width: 500px) {
-    padding: 0.7rem 0.2rem;
-    font-size: 0.98rem;
+    max-width: 92vw;
+    padding: 1.2rem 1rem;
+    font-size: 0.95rem;
     border-radius: 12px;
   }
 `;
