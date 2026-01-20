@@ -116,7 +116,7 @@ export default function Hero() {
       <AnimatedBg />
       <Content>
         <Name>Radia Riaz</Name>
-        <Tagline>App Developer | MERN Stack Developer | CGPA 3.88/4.0 | NUST</Tagline>
+        <Tagline>Software Engineer | Web & Mobile Development | AI & ML Enthusiast</Tagline>
         <Intro style={{ marginBottom: '2.2rem' }}>
           <b>Rawalpindi, Pakistan</b> &nbsp;|&nbsp; <a href="mailto:radia_riaz@outlook.com" style={{color:'#14ffe9'}}>radia_riaz@outlook.com</a>
         </Intro>

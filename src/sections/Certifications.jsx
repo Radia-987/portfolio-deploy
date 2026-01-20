@@ -157,7 +157,7 @@ const CardsGrid = styled.div`
 //
 
 const Card = styled.div`
-  background: #232526;
+  background: linear-gradient(135deg, #232526 0%, #2a2c2d 100%);
   border-radius: 18px;
   box-shadow: 0 4px 24px rgba(20,255,233,0.08);
   padding: 2rem 1.5rem 1.2rem 1.5rem;
@@ -166,10 +166,30 @@ const Card = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s cubic-bezier(.4,2,.3,1), box-shadow 0.25s;
+  border-left: 4px solid transparent;
+  border-image: linear-gradient(180deg, #14ffe9 0%, #7f5fff 100%) 1;
+  transition: transform 0.25s cubic-bezier(.4,2,.3,1), box-shadow 0.25s, border-left 0.3s;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #14ffe9 0%, #7f5fff 100%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
   &:hover {
     transform: scale(1.045);
     box-shadow: 0 4px 32px #14ffe944;
+    border-left: 4px solid #14ffe9;
+    
+    &:before {
+      opacity: 1;
+    }
   }
 
   @media (max-width: 900px) {
@@ -205,6 +225,30 @@ const CardDesc = styled.div`
   }
 `;
 
+const SkillBadge = styled.span`
+  display: inline-block;
+  background: linear-gradient(135deg, #7f5fff22 0%, #14ffe922 100%);
+  color: #14ffe9;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #7f5fff44;
+  transition: all 0.3s;
+  
+  &:hover {
+    background: linear-gradient(135deg, #7f5fff44 0%, #14ffe944 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(127, 95, 255, 0.3);
+  }
+  
+  @media (max-width: 600px) {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
+`;
+
 const CardActions = styled.div`
   display: flex;
   gap: 1.1rem;
@@ -221,21 +265,29 @@ const CardActions = styled.div`
 const CardLink = styled.button`
   color: #14ffe9;
   font-size: 1.05rem;
-  background: none;
-  border: none;
+  background: linear-gradient(135deg, #7f5fff11 0%, #14ffe911 100%);
+  border: 1px solid #14ffe944;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   gap: 0.4rem;
   cursor: pointer;
-  transition: color 0.2s;
+  transition: all 0.3s;
+  
   &:hover {
-    color: #7f5fff;
+    color: #fff;
+    background: linear-gradient(135deg, #7f5fff 0%, #14ffe9 100%);
+    border-color: #14ffe9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(20, 255, 233, 0.3);
   }
 
   @media (max-width: 600px) {
     font-size: 0.98rem;
     justify-content: center;
     width: 100%;
+    padding: 0.5rem 1rem;
   }
 `;
 
@@ -309,6 +361,41 @@ export default function Certifications() {
   const [modalOpen, setModalOpen] = useState(null); // 0 for German, 1 for AWS
   const certs = [
     {
+      name: 'Generative AI Application Developer',
+      awardedTo: 'Radia Riaz',
+      details: [
+        '🏆 Top Performer Award',
+        'NCEAC - HEC Generative AI Training',
+        'Duration: Oct - Nov 2025',
+        'Issued By: UETIANS Lahore Endowment Foundation, USA',
+        'Partners: NCEAC, CPAKANGELS, iCodeGuru, SPIRE',
+        'Certificate ID: 73dc26ea703eefb0',
+        'Issue Date: 20th December, 2025',
+      ],
+      skills: [
+        'Generative AI application development',
+        'AI/ML implementation',
+      ],
+      img: '/certifications/HEC.png'
+    },
+    {
+      name: 'Developing Your Creativity as a Leader',
+      awardedTo: 'Radia Riaz',
+      details: [
+        'Course by LinkedIn Learning',
+        'Sponsored By: PMI® Registered Education Provider',
+        'Completion Date: Nov 25, 2025',
+        'Provider ID: #4101',
+        'Activity: 4101G12F3K',
+        'PDUs/Contact Hours: 0.75',
+      ],
+      skills: [
+        'Creativity and Innovation',
+        'Leadership',
+      ],
+      img: '/certifications/Leadership.png'
+    },
+    {
       name: 'German Language Course (A1.1)',
       awardedTo: 'Radia Riaz',
       details: [
@@ -357,9 +444,9 @@ export default function Certifications() {
                 </div>
                 <div style={{marginBottom:'0.7rem'}}>
                   <b>Skills:</b>
-                  <ul style={{margin:'0.3rem 0 0.3rem 1.1rem',color:'#bdbdbd'}}>
-                    {cert.skills.map((s, i) => (<li key={i}>{s}</li>))}
-                  </ul>
+                  <div style={{marginTop:'0.5rem'}}>
+                    {cert.skills.map((s, i) => (<SkillBadge key={i}>{s}</SkillBadge>))}
+                  </div>
                 </div>
               </CardDesc>
             </div>

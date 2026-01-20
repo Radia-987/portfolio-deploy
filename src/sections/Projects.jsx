@@ -16,6 +16,25 @@ const DateLabel = styled.div`
   margin-bottom: 0.7rem;
   align-self: flex-end;
 `;
+
+const AwardBadge = styled.div`
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+  
+  @media (max-width: 600px) {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+`;
 // ...existing code...
 const ProjectsSection = styled.section`
   background: #181a1b;
@@ -224,7 +243,150 @@ export default function Projects() {
   const netflixImages = [
     '/netflix/1.png','/netflix/2.png','/netflix/3.png','/netflix/4.png','/netflix/5.png','/netflix/6.png','/netflix/7.png','/netflix/8.png','/netflix/9.png','/netflix/10.png','/netflix/11.png','/netflix/12.png','/netflix/13.png','/netflix/14.png','/netflix/15.png','/netflix/16.png','/netflix/17.png','/netflix/18.png','/netflix/19.png','/netflix/20.png'
   ];
+  const financeImages = [
+    '/finance/1.5.png',
+    '/finance/1.png',
+    '/finance/2.png',
+    '/finance/3.png',
+    '/finance/4.png',
+    '/finance/5.png',
+    '/finance/6.png',
+    '/finance/7.png',
+    '/finance/8.png',
+    '/finance/9.png',
+    '/finance/10.png',
+    '/finance/11.png',
+    '/finance/12.png',
+    '/finance/13.png',
+    '/finance/14.png',
+    '/finance/15.png',
+    '/finance/16.png',
+    '/finance/17.png',
+    '/finance/18.png',
+    '/finance/19.png',
+    '/finance/20.png',
+    '/finance/21.5.png',
+    '/finance/21.png',
+    '/finance/22.png',
+    '/finance/23.png',
+    '/finance/24.png',
+    '/finance/25.png',
+    '/finance/26.png',
+    '/finance/27.png'
+  ];
+  const researchForgeImages = [
+    '/ResearchForge/.1.png',
+    '/ResearchForge/.2.png',
+    '/ResearchForge/.3.png',
+    '/ResearchForge/.4.png',
+    '/ResearchForge/.5.png',
+    '/ResearchForge/.6.png',
+    '/ResearchForge/.7.png',
+    '/ResearchForge/.8.png',
+    '/ResearchForge/.9.png',
+    '/ResearchForge/.10.png',
+    '/ResearchForge/.11.png',
+    '/ResearchForge/.12.png',
+    '/ResearchForge/.13.png',
+    '/ResearchForge/.14.png',
+    '/ResearchForge/.15.png',
+    '/ResearchForge/.16.png',
+    '/ResearchForge/.17.png'
+  ];
+  const msdImages = [
+    '/MSD/1.jpg',
+    '/MSD/2.png',
+    '/MSD/3.png'
+  ];
   const projects = [
+    {
+      title: 'ResearchForge AI',
+      date: '2025 - HEC Hackathon',
+      award: '🏆 Award Winning Project',
+      stack: 'Python, Streamlit, GPT-4, Flan-T5-Large, PyTorch, arXiv API, BeautifulSoup',
+      image: researchForgeImages[0],
+      hackathonResult: '/Hackathon/Result.png',
+      short: 'Multi-agent AI research assistant that autonomously conducts literature reviews, identifies gaps, and writes complete academic papers - reducing 2-3 weeks of work to 2-3 minutes.',
+      details: (
+        <CardDetails>
+          <b>Key Features:</b>
+          <ul style={{margin:'0.5rem 0 0.7rem 1.1rem'}}>
+            <li>4-phase AI pipeline automating literature reviews (2-3 weeks → 2-3 minutes)</li>
+            <li>Dual-model gap analysis: Flan-T5-Large + GPT-4 with scoring system</li>
+            <li>One-click paper generation (3,500+ words, publication-ready format)</li>
+            <li>Real dataset recommendations via Kaggle/HuggingFace APIs</li>
+            <li>Interactive Streamlit dashboard with real-time tracking</li>
+          </ul>
+          <b>Tech Stack:</b>
+          <ul style={{margin:'0.5rem 0 0.7rem 1.1rem'}}>
+            <li>GPT-4, GPT-3.5-turbo, Flan-T5-Large, PyTorch, Python 3.11</li>
+            <li>arXiv/Google Scholar APIs, BeautifulSoup, Pandas</li>
+          </ul>
+          <b>Reflection:</b> HEC Hackathon project showcasing AI-powered academic research automation.
+        </CardDetails>
+      ),
+      images: researchForgeImages,
+    },
+    {
+      title: 'MSD Posture Monitoring System',
+      date: '2025 - Research Collaboration',
+      stack: 'JavaScript, MediaPipe AI, Node.js, Express, MySQL, Canvas API',
+      image: msdImages[0] || '/introproject/msd.png',
+      short: 'Real-time ergonomic assessment system for dental professionals using AI-powered pose detection to prevent musculoskeletal disorders by monitoring body posture during clinical procedures.',
+      details: (
+        <CardDetails>
+          <b>Key Features:</b>
+          <ul style={{margin:'0.5rem 0 0.7rem 1.1rem'}}>
+            <li>Real-time pose tracking using MediaPipe AI (33-point skeletal detection)</li>
+            <li>Measures critical angles: neck, torso, arms based on ISO dental ergonomic standards</li>
+            <li>Weighted scoring algorithm with configurable handedness (right/left-handed)</li>
+            <li>Session-based data capture with MySQL backend for historical analysis</li>
+            <li>Live visualization with color-coded status indicators</li>
+          </ul>
+          <b>Tech Stack:</b>
+          <ul style={{margin:'0.5rem 0 0.7rem 1.1rem'}}>
+            <li>MediaPipe Pose Detection, Canvas API, Node.js, Express, MySQL2</li>
+            <li>Vector mathematics for angle calculations, real-time webcam integration</li>
+          </ul>
+          <b>Reflection:</b> Research-based project in collaboration with dental practitioners to prevent occupational MSDs through ergonomic monitoring.
+        </CardDetails>
+      ),
+      images: msdImages,
+    },
+    {
+      title: 'Personal Finance Dashboard',
+      date: '2025',
+      stack: 'React Native, Expo, Redux Toolkit, Node.js, Express, MongoDB, Socket.io, Gemini AI',
+      image: financeImages[0],
+      short: 'A comprehensive mobile finance management app with real-time portfolio tracking, AI-powered expense categorization, budget management, and goal planning.',
+      details: (
+        <CardDetails>
+          <b>Key Features:</b>
+          <ul style={{margin:'0.5rem 0 0.7rem 1.1rem'}}>
+            <li>Real-time stock portfolio tracking with live market data</li>
+            <li>AI-powered expense categorization using Gemini API</li>
+            <li>Budget management with smart alerts and notifications</li>
+            <li>Financial goal tracking with visual progress indicators</li>
+            <li>Interactive charts and analytics for spending insights</li>
+            <li>Real-time data sync via Socket.io</li>
+            <li>Dark/Light theme support with responsive design</li>
+          </ul>
+          <b>Tech Stack:</b>
+          <ul style={{margin:'0.5rem 0 0.7rem 1.1rem'}}>
+            <li>Frontend: React Native, Expo SDK 48, Redux Toolkit, React Navigation</li>
+            <li>Backend: Node.js, Express, MongoDB, Mongoose, Socket.io</li>
+            <li>APIs: Alpha Vantage, Yahoo Finance, Gemini AI</li>
+            <li>Security: JWT, bcrypt, Expo SecureStore</li>
+          </ul>
+          <b>Learning:</b>
+          <ul style={{margin:'0.5rem 0 0.7rem 1.1rem'}}>
+            <li>Advanced state management with Redux Toolkit, real-time communication, financial API integration, secure authentication patterns</li>
+          </ul>
+          <b>Reflection:</b> Developed to master full-stack mobile development with complex features like real-time updates, AI integration, and financial data management.
+        </CardDetails>
+      ),
+      images: financeImages,
+    },
     {
       title: 'Recipe Master Clone',
       date: '2025',
@@ -316,6 +478,7 @@ export default function Projects() {
 
   const [detailsOpen, setDetailsOpen] = useState(null); // index of open details modal, or null
   const [imgOpen, setImgOpen] = useState(null); // index of open image slider, or null
+  const [hackathonResultOpen, setHackathonResultOpen] = useState(false);
 
   return (
     <ProjectsSection id="projects">
@@ -324,12 +487,16 @@ export default function Projects() {
         {projects.map((proj, idx) => (
           <Card key={idx}>
             <div>
+              {proj.award && <AwardBadge>{proj.award}</AwardBadge>}
               <DateLabel>{proj.date}</DateLabel>
               <CardTitle>{proj.title}</CardTitle>
               <CardStack>{proj.stack}</CardStack>
-              {idx === 0 && <CardImage src={'/introproject/recipe.png'} alt="Recipe Master Clone preview" style={{objectFit:'contain', maxHeight:'170px'}} />}
-              {idx === 1 && <CardImage src={'/introproject/netflix.png'} alt="NovaStream preview" style={{objectFit:'cover', maxHeight:'175px'}} />}
-              {idx === 2 && <CardImage src={'/introproject/cab.png'} alt="Cab Booking System preview" />}
+              {idx === 0 && <CardImage src={'/introproject/research.png'} alt="ResearchForge AI preview" style={{objectFit:'contain', maxHeight:'170px'}} />}
+              {idx === 1 && <CardImage src={'/introproject/MSD.png'} alt="MSD Posture Monitoring preview" style={{objectFit:'contain', maxHeight:'170px'}} />}
+              {idx === 2 && <CardImage src={'/introproject/accounting.png'} alt="Personal Finance Dashboard preview" style={{objectFit:'contain', maxHeight:'170px'}} />}
+              {idx === 3 && <CardImage src={'/introproject/recipe.png'} alt="Recipe Master Clone preview" style={{objectFit:'contain', maxHeight:'170px'}} />}
+              {idx === 4 && <CardImage src={'/introproject/netflix.png'} alt="NovaStream preview" style={{objectFit:'cover', maxHeight:'175px'}} />}
+              {idx === 5 && <CardImage src={'/introproject/cab.png'} alt="Cab Booking System preview" />}
               <CardShort>{proj.short}</CardShort>
             </div>
             <div>
@@ -339,6 +506,11 @@ export default function Projects() {
                 </SeeMoreBtn>
               )}
               <CardLinks>
+                {proj.hackathonResult && (
+                  <CardLink as="button" style={{background:'none',border:'none',padding:0,cursor:'pointer'}} onClick={() => setHackathonResultOpen(true)}>
+                    🏆 Hackathon Results
+                  </CardLink>
+                )}
                 {proj.images && proj.images.length > 0 && (
                   <CardLink as="button" style={{background:'none',border:'none',padding:0,cursor:'pointer'}} onClick={() => setImgOpen(idx)}>
                     <FontAwesomeIcon icon={faImages} /> Demo/Pictures
@@ -353,6 +525,7 @@ export default function Projects() {
         {detailsOpen !== null && projects[detailsOpen].details}
       </ProjectDetailsModal>
       <ImageSlider open={imgOpen !== null} onClose={() => setImgOpen(null)} images={imgOpen !== null ? projects[imgOpen].images : []} />
+      <ImageSlider open={hackathonResultOpen} onClose={() => setHackathonResultOpen(false)} images={['/Hackathon/Result.png']} />
     </ProjectsSection>
   );
 }
